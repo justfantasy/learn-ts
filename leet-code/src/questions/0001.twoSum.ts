@@ -4,14 +4,14 @@
  * @param target
  */
 export default function twoSum(nums: number[], target: number): number[] {
-  let diff: number[] = [];
+  let diffMap = new Map();
 
   for (const [index, item] of nums.entries()) {
-    let tmp = target - item;
-    if (diff[tmp] !== undefined) {
-      return [diff[tmp], index];
+    let diff = target - item;
+    if (diffMap.has(diff)) {
+      return [diffMap.get(diff), index];
     }
-    diff[item] = index;
+    diffMap.set(item, index);
   }
 
   return [];
