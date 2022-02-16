@@ -13,27 +13,25 @@
  */
 export default function luckyNumbers(matrix: number[][]): number[] {
   let luckyNumbers: number[] = [];
-  let length = matrix.length;
-  let exist: number[] = [];
-  for (let i = 0; i < length; i++) {
+  let existColumn: number[] = [];
+
+  matrix.forEach((val) => {
     // 获取当前行的最小值
-    let min = Math.min(...matrix[i]);
+    let min = Math.min(...val);
 
     // 最小值所在的列
-    let minInx = matrix[i].findIndex((ele) => {
+    let minInx = val.findIndex((ele) => {
       return ele === min;
     });
 
-    // 如果当前列已存在
-    if (exist.includes(minInx)) {
-      continue;
-    }
-
-    // 是否是当前列中的最大值
-    if (!matrix.some((ele) => ele[minInx] > min)) {
+    // 如果不在已存在的列中当前列已存在
+    if (
+      !existColumn.includes(minInx) &&
+      !matrix.some((ele) => ele[minInx] > min)
+    ) {
       luckyNumbers = [min, ...luckyNumbers];
-      exist = [minInx, ...exist];
+      existColumn = [minInx, ...existColumn];
     }
-  }
+  })
   return luckyNumbers;
 }
