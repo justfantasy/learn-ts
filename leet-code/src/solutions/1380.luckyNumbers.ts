@@ -14,6 +14,7 @@
 export default function luckyNumbers(matrix: number[][]): number[] {
   let luckyNumbers: number[] = [];
   let length = matrix.length;
+  let exist: number[] = [];
   for (let i = 0; i < length; i++) {
     // 获取当前行的最小值
     let min = Math.min(...matrix[i]);
@@ -23,9 +24,15 @@ export default function luckyNumbers(matrix: number[][]): number[] {
       return ele === min;
     });
 
+    // 如果当前列已存在
+    if (exist.includes(minInx)) {
+      continue;
+    }
+
     // 是否是当前列中的最大值
     if (!matrix.some((ele) => ele[minInx] > min)) {
       luckyNumbers = [min, ...luckyNumbers];
+      exist = [minInx, ...exist];
     }
   }
   return luckyNumbers;
