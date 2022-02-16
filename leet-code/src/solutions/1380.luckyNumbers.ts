@@ -20,9 +20,7 @@ export default function luckyNumbers(matrix: number[][]): number[] {
     let min = Math.min(...val);
 
     // 最小值所在的列
-    let minInx = val.findIndex((ele) => {
-      return ele === min;
-    });
+    let minInx = val.findIndex((ele) => ele === min);
 
     // 如果不在已存在的列中当前列已存在
     if (
