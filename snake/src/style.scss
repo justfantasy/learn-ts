@@ -3,16 +3,8 @@
   margin: 0;
 }
 
-#app {
-  display: flex;
-  height: 100vh;
-  background: aqua;
-  border-radius: 10px;
+.container {
+  width: 500px;
+  height: 500px;
 
-  h2 {
-    display: flex;
-    font-size: 20px;
-    font-weight: normal;
-    border: 1px solid #fff;
-  }
 }
