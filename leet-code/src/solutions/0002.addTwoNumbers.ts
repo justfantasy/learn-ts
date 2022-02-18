@@ -35,14 +35,14 @@ export default function addTwoNumbers(l1: ListNode | null, l2: ListNode | null):
   let list2 = new ListNode(0, l2);
   let ret = new ListNode(0, null);
   let tmp = ret;   // 中转值，这样ret的内存地址并不会改变，go语言也是这么实现的，后面修改tmp，一直修改的是tmp的内存地址，ret的内存地址并没有修改
-  let add: number = 0;
+  let carry = 0;
 
-  while (list1.next !== null || list2.next !== null || add > 0) {
+  while (list1.next !== null || list2.next !== null || carry > 0) {
     list1 = list1.next === null ? emptyNode : list1.next;
     list2 = list2.next === null ? emptyNode : list2.next;
 
-    let sum = list1.val + list2.val + add;
-    add = sum >= 10 ? 1 : 0;
+    let sum = list1.val + list2.val + carry;
+    carry = Math.floor(sum / 10);
     tmp.next = new ListNode(sum%10, null);
     tmp = tmp.next;
   }
