@@ -1,6 +1,6 @@
 import './style.css'
 // import twoSum from './solutions/0001.twoSum';
-import luckyNumbers from './solutions/1380.luckyNumbers';
+import lengthOfLongestSubstring from './solutions/0003.lengthOfLongestSubstring';
 
-console.log(luckyNumbers([[3,7,8],[9,11,13],[15,16,17]]));
+lengthOfLongestSubstring('abcabcbb');
 
