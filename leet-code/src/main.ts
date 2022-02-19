@@ -1,6 +1,6 @@
 import './style.css'
 // import twoSum from './solutions/0001.twoSum';
-import lengthOfLongestSubstring from './solutions/0003.lengthOfLongestSubstring';
+import findMedianSortedArrays from './solutions/0004.findMedianSortedArrays';
 
-lengthOfLongestSubstring('abcabcbb');
+console.log(findMedianSortedArrays([3], [-2, -1]));
 
