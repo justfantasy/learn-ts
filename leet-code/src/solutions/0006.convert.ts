@@ -37,8 +37,17 @@
  */
 export default function convert(s: string, numRows: number): string {
   let ret = '';
-  for (let i = 0; i < s.length; i++) {
+  let retArr: number[][] | string[][] = [];
+  let j = 0;  // 行
+  let k = 0;  // 列
 
+  // 中间占一列的字符数量
+  let x = numRows > 2 ? numRows - 2 : 0;
+
+  for (let i = 0; i < s.length; i++) {
+    retArr[j][k] = s[i];
+    let tmp = i + 1;
+    console.log(x, tmp);
   }
   return ret;
 };

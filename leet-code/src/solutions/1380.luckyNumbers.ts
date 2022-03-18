@@ -30,6 +30,7 @@ export default function luckyNumbers(matrix: number[][]): number[] {
       luckyNumbers = [min, ...luckyNumbers];
       existColumn = [minInx, ...existColumn];
     }
-  })
+  });
+
   return luckyNumbers;
 }

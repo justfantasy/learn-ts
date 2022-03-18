@@ -6,6 +6,14 @@ module.exports = {
   extends: [
     'airbnb-base',
   ],
+  settings: {
+    // 修复import/unresolved提示
+    'import/resolver': {
+      node: {
+        extensions: ['.js', 'jsx', '.ts', '.tsx'],
+      },
+    },
+  },
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
@@ -15,5 +23,16 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    // 修复引入import tsx文件时报错的问题
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
   },
 };
