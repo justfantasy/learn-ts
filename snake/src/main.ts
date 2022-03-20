@@ -1,5 +1,6 @@
 import './style.scss';
-import Food from './mod/Food';
+import Food from './modules/Food';
 
 const food = new Food();
+food.change();
 console.log(food);
