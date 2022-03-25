@@ -1,6 +1,5 @@
 import './style.scss';
-import Food from './modules/Food';
+import Control from './modules/Control';
 
-const food = new Food();
-food.change();
-console.log(food);
+const control = new Control();
+control.start();

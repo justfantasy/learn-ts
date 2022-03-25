@@ -1,7 +1,7 @@
 export default class Food {
   element: HTMLElement;
 
-  static max = 29;
+  max = 29;
 
   constructor() {
     this.element = document.querySelector('.food')!;
